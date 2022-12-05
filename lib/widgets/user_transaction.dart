@@ -6,7 +6,12 @@ import 'trasaction_list.dart';
 import 'package:expense_tracker/models/transaction .dart';
 
 class UserTransaction extends StatefulWidget {
-  final List<Transaction> _userTransactions = [
+  @override
+  State<UserTransaction> createState() => _UserTransactionState();
+}
+
+class _UserTransactionState extends State<UserTransaction> {
+   final List<Transaction> _userTransactions = [
     Transaction(
       id: 't1',
       title: 'New shoes',
@@ -34,12 +39,6 @@ class UserTransaction extends StatefulWidget {
    });
 
   }
-
-  @override
-  State<UserTransaction> createState() => _UserTransactionState();
-}
-
-class _UserTransactionState extends State<UserTransaction> {
   @override
   Widget build(BuildContext context) {
     return Column(
