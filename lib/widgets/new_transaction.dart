@@ -21,7 +21,7 @@ class _NewTransactionState extends State<NewTransaction> {
   final _amountController = TextEditingController();
 
   // ignore: unused_field
-  late DateTime _selectedDate;
+  DateTime? _selectedDate;
 
   void _submitData() {
     if (_amountController.text.isEmpty) {
@@ -96,7 +96,7 @@ class _NewTransactionState extends State<NewTransaction> {
                     child: Text(
                       _selectedDate == null
                           ? 'No date choosen!'
-                          : DateFormat.yMd().format(_selectedDate) as String,
+                          : DateFormat.yMd().format(_selectedDate as DateTime) as String,
                     ),
                   ),
                   AdaptiveFlatButton('Choose Date', _presentDatePicker)

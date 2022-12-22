@@ -44,7 +44,7 @@ class TransactionList extends StatelessWidget {
                         padding: EdgeInsets.all(6),
                         child: FittedBox(
                             child: Text(
-                                '\u{020B9} + ${transactions[index].amount}'))),
+                                '\u{020B9} ${transactions[index].amount}'))),
                   ),
                   title: Text(
                     transactions[index].title as String,
@@ -58,7 +58,10 @@ class TransactionList extends StatelessWidget {
                       ? TextButton.icon(
                           onPressed: () => deleteTx(transactions[index].id),
                           icon: Icon(Icons.delete),
-                          label: Text('delete'),
+                          label: Text(
+                            'Delete',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                           style: TextButton.styleFrom(
                             foregroundColor: Theme.of(context).errorColor,
                           ),
